@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.gbif.api.vocabulary.Rank;
 import org.junit.Test;
 
 import au.org.ala.sds.model.ConservationInstance;
@@ -38,7 +39,7 @@ public class GeneralisedLocationTest {
     static SensitivityCategory NEAR_THREATENED;
 
     static {
-        st = new SensitiveTaxon("Crex crex", SensitiveTaxon.Rank.SPECIES);
+        st = new SensitiveTaxon("Crex crex", Rank.SPECIES);
         instances = st.getInstances();
         ACT = SensitivityZoneFactory.getZone(SensitivityZone.ACT);
         NSW = SensitivityZoneFactory.getZone(SensitivityZone.NSW);

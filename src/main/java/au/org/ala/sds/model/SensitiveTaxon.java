@@ -21,6 +21,7 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.log4j.Logger;
+import org.gbif.api.vocabulary.Rank;
 
 /**
  *
@@ -32,7 +33,7 @@ public class SensitiveTaxon implements Serializable, Comparable<SensitiveTaxon> 
 
     protected static final Logger logger = Logger.getLogger(SensitiveTaxon.class);
 
-    public enum Rank { SUBSPECIES,SPECIES, GENUS, FAMILY,UNKNOWN, INFRASPECIFICNAME, CULTIVAR, FORM, VARIETY, SUBVARIETY, SUPERFAMILY, SUBFAMILY };
+    //public enum Rank { SUBSPECIES, SPECIES, GENUS, FAMILY,UNKNOWN, INFRASPECIFIC_NAME, INFRASUBSPECIFIC_NAME, CULTIVAR, BIOVAR, FORM, FORMA_SPECIALIS, STRAIN, PATHOVAR, VARIETY, SUBVARIETY, SUPERFAMILY, SUBFAMILY };
 
     private final String name;
     private String family;

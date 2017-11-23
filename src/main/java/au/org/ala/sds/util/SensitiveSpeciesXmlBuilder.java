@@ -90,14 +90,14 @@ public class SensitiveSpeciesXmlBuilder {
                 sensitiveSpecies = new Element("sensitiveSpecies");
                 sensitiveSpecies.setAttribute("name", item.getName());
                 sensitiveSpecies.setAttribute("family", item.getFamily() != null ? item.getFamily() : "");
-                String rank = "UNKNOWN";
+                String rank = "UNRANKED";
                 try {
                     ParsedName pn = parser.parse(item.getName());
                     if(pn != null && pn.getRank() != null) {
                         rank = pn.getRank().toString().toUpperCase();
                     }
                 } catch(Exception e){
-                    logger.error("Unable to get rank for " + item.getName(), e);
+                    logger.error("Unable to get rank for " + item.getName() + ": " + e.getMessage());
                 }
                 sensitiveSpecies.setAttribute("guid", item.getGuid());
                 sensitiveSpecies.setAttribute("rank", rank);
@@ -135,7 +135,7 @@ public class SensitiveSpeciesXmlBuilder {
                 sensitiveSpecies = new Element("sensitiveSpecies");
                 sensitiveSpecies.setAttribute("name", item.getName());
                 sensitiveSpecies.setAttribute("family", item.getFamily() != null ? item.getFamily() : "");
-                String rank = "UNKNOWN";
+                String rank = "UNRANKED";
                 try{
                     rank = parser.parse(item.getName()).getRank().toString().toUpperCase();
                 } catch(Exception e){

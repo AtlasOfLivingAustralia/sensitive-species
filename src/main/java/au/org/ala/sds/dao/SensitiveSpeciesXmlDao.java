@@ -5,6 +5,7 @@ package au.org.ala.sds.dao;
 
 import au.org.ala.sds.model.*;
 import org.apache.log4j.Logger;
+import org.gbif.api.vocabulary.Rank;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -51,7 +52,8 @@ public class SensitiveSpeciesXmlDao implements SensitiveSpeciesDao {
             Element sse = (Element) sli.next();
             String name = sse.getAttributeValue("name");
             String family = sse.getAttributeValue("family");
-            SensitiveTaxon.Rank rank = SensitiveTaxon.Rank.valueOf(sse.getAttributeValue("rank"));
+            String rn = sse.getAttributeValue("rank");
+            Rank rank = rn == null ? Rank.UNRANKED : Rank.valueOf(rn);
             String commonName = sse.getAttributeValue("commonName");
 
             SensitiveTaxon ss = new SensitiveTaxon(name, rank);

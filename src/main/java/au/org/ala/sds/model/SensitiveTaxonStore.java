@@ -19,9 +19,9 @@ import au.org.ala.names.model.NameSearchResult;
 import au.org.ala.names.search.ALANameSearcher;
 import au.org.ala.names.search.SearchResultException;
 import au.org.ala.sds.dao.SensitiveSpeciesDao;
-import au.org.ala.sds.model.SensitiveTaxon.Rank;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.gbif.api.vocabulary.Rank;
 
 import java.io.Serializable;
 import java.util.*;
